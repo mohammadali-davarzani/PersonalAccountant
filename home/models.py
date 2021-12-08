@@ -26,3 +26,11 @@ class Income(models.Model):
     description = models.TextField(null=True, blank=True)
     amount = models.BigIntegerField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)    
+
+
+    class Meta:
+        verbose_name = "Income"
+        verbose_name_plural = "Incomes"
+
+    def __str__(self):
+        return "{} | {}".format(self.title, self.user)

@@ -3,5 +3,11 @@ from .models import Expense, Income
 
 # Register your models here.
 
-admin.site.register(Expense)
-admin.site.register(Income)
+@admin.register(Expense)
+class ExpenseAdmin(admin.ModelAdmin):
+    display_list = ["title", "user", "amount", "date"]
+
+
+@admin.register(Income)
+class IncomeAdmin(admin.ModelAdmin):
+    display_list = ["title", "user", "amount", "date"]
